@@ -89,11 +89,11 @@ enum Command {
 #define MAKE_PIN(pin) _MAKE_PIN(pin) // Puts a P in front of the pin number, e.g. 1 becomes P1
 #define _MAKE_PIN(pin) P ## pin
 
-#define leftEncoder1 MAKE_PIN(leftEncoder1Pin)
-#define leftEncoder2 MAKE_PIN(leftEncoder2Pin)
+#define leftEncoder1 P25//MAKE_PIN(leftEncoder1Pin)
+#define leftEncoder2 P26//MAKE_PIN(leftEncoder2Pin)
 
-#define rightEncoder1 MAKE_PIN(rightEncoder1Pin)
-#define rightEncoder2 MAKE_PIN(rightEncoder2Pin)
+#define rightEncoder1 P30//MAKE_PIN(rightEncoder1Pin)
+#define rightEncoder2 P31//MAKE_PIN(rightEncoder2Pin)
 
 // You should change these to match your pins
 #if BALANDUINO_REVISION < 13
@@ -113,7 +113,7 @@ enum Command {
 
 #define spektrumBindPin P0 // Pin used to bind with the Spektrum satellite receiver - you can use any pin while binding, but you should connect it to RX0 afterwards
 
-#define LED MAKE_PIN(LED_BUILTIN) // LED_BUILTIN is defined in pins_arduino.h in the hardware add-on
+#define LED P0//MAKE_PIN(LED_BUILTIN) // LED_BUILTIN is defined in pins_arduino.h in the hardware add-on
 
 #define VBAT A5 // Not broken out - used for battery voltage measurement
 

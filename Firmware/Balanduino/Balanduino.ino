@@ -394,7 +394,7 @@ void loop() {
 #ifdef ENABLE_BTD
   if (Btd.isReady()) {
     timer = millis();
-    if ((Btd.watingForConnection && timer - blinkTimer > 1000) || (!Btd.watingForConnection && timer - blinkTimer > 100)) {
+    if ((Btd.waitingForConnection && timer - blinkTimer > 1000) || (!Btd.waitingForConnection && timer - blinkTimer > 100)) {
       blinkTimer = timer;
       LED::Toggle(); // Used to blink the built in LED, starts blinking faster upon an incoming Bluetooth request
     }
