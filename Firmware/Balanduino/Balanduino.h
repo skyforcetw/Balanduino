@@ -89,11 +89,17 @@ enum Command {
 #define MAKE_PIN(pin) _MAKE_PIN(pin) // Puts a P in front of the pin number, e.g. 1 becomes P1
 #define _MAKE_PIN(pin) P ## pin
 
+#if 0
+#define leftEncoder1 MAKE_PIN(leftEncoder1Pin)
+#define leftEncoder2 MAKE_PIN(leftEncoder2Pin)
+#define rightEncoder1 MAKE_PIN(rightEncoder1Pin)
+#define rightEncoder2 MAKE_PIN(rightEncoder2Pin)
+#else
 #define leftEncoder1 P25//MAKE_PIN(leftEncoder1Pin)
 #define leftEncoder2 P26//MAKE_PIN(leftEncoder2Pin)
-
 #define rightEncoder1 P30//MAKE_PIN(rightEncoder1Pin)
 #define rightEncoder2 P31//MAKE_PIN(rightEncoder2Pin)
+#endif
 
 // You should change these to match your pins
 #if BALANDUINO_REVISION < 13
@@ -276,5 +282,7 @@ static inline void printValues();
 static void setValues(char *input);
 static inline bool calibrateGyro();
 static bool checkMinMax(int16_t *array, uint8_t length, int16_t maxDifference);
+
+#undef MAKE_PIN
 
 #endif
